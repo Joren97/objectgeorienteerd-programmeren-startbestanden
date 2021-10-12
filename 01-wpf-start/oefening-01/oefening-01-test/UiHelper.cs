@@ -2,18 +2,31 @@
 using FlaUI.UIA3;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace oefening_01_test
 {
-    public static class TestHelper
+    public static class UiHelper
     {
         public static string GetExePath(string v)
         {
-            string myPath = System.Reflection.Assembly.GetEntryAssembly().Location;
-            string myDir = System.IO.Path.GetDirectoryName(myPath);
-            string path = System.IO.Path.Combine(myDir, v);
-            return path;
+            var directory = new DirectoryInfo(Directory.GetCurrentDirectory());
+
+            while (directory != null && !directory.GetFiles("*.sln").Any())
+            {
+                directory = directory.Parent;
+            }
+
+            FileInfo[] allFiles = directory.GetFiles("*.*", SearchOption.AllDirectories);
+
+            return allFiles.First(x => x.FullName.Contains($"{v}.exe")).FullName;
+        }
+
+        internal static TextBox GetTextBox(Window window, string v)
+        {
+            return GetAutomationElement(window, v).AsTextBox();
         }
 
         private static AutomationElement GetAutomationElement(Window window, string name)

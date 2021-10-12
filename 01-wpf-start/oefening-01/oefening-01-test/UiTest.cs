@@ -8,38 +8,29 @@ namespace oefening_01_test
         private const string _wpfProjectName = "oefening-01";
 
         [Fact]
-        public void KnopGooienHeeftJuisteNaam()
+        public void ControlsHebbenJuisteNaam()
         {
-            var app = TestHelper.LoadApp(_wpfProjectName);
-            var window = TestHelper.GetWindow(app);
-            var button = TestHelper.GetButton(window, "btnGooien");
+            var app = UiHelper.LoadApp(_wpfProjectName);
+            var window = UiHelper.GetWindow(app);
+            var button = UiHelper.GetButton(window, "btnGooien");
+            var lblBlauw = UiHelper.GetLabel(window, "lblBlauw");
+            var lblRood = UiHelper.GetLabel(window, "lblRood");
             app.Close();
 
             Assert.NotNull(button);
-        }
-
-        [Fact]
-        public void LabelsHebbenJuisteNaam()
-        {
-            var app = TestHelper.LoadApp(_wpfProjectName);
-            var window = TestHelper.GetWindow(app);
-            var lblBlauw = TestHelper.GetLabel(window, "lblBlauw");
-            var lblRood = TestHelper.GetLabel(window, "lblRood");
-            app.Close();
-
             Assert.NotNull(lblBlauw);
             Assert.NotNull(lblRood);
         }
 
         [Fact]
-        public void FunctionaliteitGooien()
+        public void CorrecteFunctionaliteit()
         {
-            var app = TestHelper.LoadApp(_wpfProjectName);
-            var window = TestHelper.GetWindow(app);
-            var button = TestHelper.GetButton(window, "btnGooien");
+            var app = UiHelper.LoadApp(_wpfProjectName);
+            var window = UiHelper.GetWindow(app);
+            var button = UiHelper.GetButton(window, "btnGooien");
             button.Invoke();
-            var lblBlauwValue = TestHelper.GetLabelValue(window, "lblBlauw");
-            var lblRoodValue = TestHelper.GetLabelValue(window, "lblRood");
+            var lblBlauwValue = UiHelper.GetLabelValue(window, "lblBlauw");
+            var lblRoodValue = UiHelper.GetLabelValue(window, "lblRood");
             app.Close();
 
             Assert.InRange(int.Parse(lblBlauwValue), 1, 6);
