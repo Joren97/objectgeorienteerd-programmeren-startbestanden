@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>oefening_01_test</RootNamespace>
+    <RootNamespace>oefening_00_test</RootNamespace>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\oefening-01-wpf\oefening-01-wpf.csproj" />
+    <ProjectReference Include="..\oefening-00-wpf\oefening-00-wpf.csproj" />
   </ItemGroup>
 
 </Project>
