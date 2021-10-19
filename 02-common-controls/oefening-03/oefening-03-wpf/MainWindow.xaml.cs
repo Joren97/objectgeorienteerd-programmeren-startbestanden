@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace oefening_00_wpf
+namespace oefening_03_wpf
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>oefening_00_test</RootNamespace>
+    <RootNamespace>oefening_04_test</RootNamespace>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
@@ -22,7 +22,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\oefening-00-wpf\oefening-00-wpf.csproj" />
+    <ProjectReference Include="..\oefening-04-wpf\oefening-04-wpf.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="xunit.runner.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

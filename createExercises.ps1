@@ -10,7 +10,7 @@ Invoke-Expression $command
 
 Copy-Item $gitignore
 
-for ($num = 0 ; $num -le $exercises ; $num++)
+for ($num = 1 ; $num -le $exercises ; $num++)
 {	
 	$name = $num;
 	if ($num.tostring().length -eq 1){
